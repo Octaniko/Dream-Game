@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=4 uid="uid://k2p02goqysm3"]
+
+[ext_resource type="TileSet" uid="uid://dkv8382inbpb0" path="res://dreams/dream_1/sprites/waterfall_tile_set.tres" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://chrkutp03k78y" path="res://scenes/player_2d.gd" id="2_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://lwi630qglxh7" path="res://dreams/dream_1/sprites/player_sheet.png" id="3_k0juu"]
+[ext_resource type="AudioStream" uid="uid://u121qp7pk7kb" path="res://dreams/dream_1/sound/Undertale Unreleased OSTWaterfall Ambiance - antwon369 (youtube).mp3" id="4_k0juu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71j4m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71j4m"]
+atlas = ExtResource("3_k0juu")
+region = Rect2(0, 0, 19, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfnet"]
+atlas = ExtResource("3_k0juu")
+region = Rect2(19, 0, 19, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7141"]
+atlas = ExtResource("3_k0juu")
+region = Rect2(38, 0, 19, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mrxx"]
+atlas = ExtResource("3_k0juu")
+region = Rect2(57, 0, 19, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r4gi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71j4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfnet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7141")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mrxx")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
+
+[node name="GameController" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D"]
+tile_map_data = PackedByteArray("AAD+////AAARAAkAAAD+/wAAAAARAAkAAAD//wAAAAARAAkAAAD/////AAARAAkAAAAAAAAAAAARAAkAAAAAAP//AAARAAkAAAABAP//AAARAAkAAAABAAAAAAARAAkAAAACAP//AAARAAkAAAACAAAAAAARAAkAAAADAP//AAARAAkAAAAEAP//AAARAAkAAAAEAAAAAAARAAkAAAAFAP//AAARAAkAAAADAAAAAAARAAkAAAAFAAAAAAARAAkAAAAGAAAAAAARAAkAAAAGAP//AAARAAkAAAAHAAAAAAARAAkAAAAHAP//AAARAAkAAAAIAAAAAAARAAkAAAAIAP//AAARAAkAAAAJAP//AAARAAkAAAAJAAAAAAARAAkAAAAKAP//AAARAAkAAAAKAAAAAAARAAkAAAALAP//AAARAAkAAAALAAAAAAARAAkAAAAMAP//AAARAAkAAAAMAAAAAAARAAkAAAANAP//AAARAAkAAAANAAAAAAARAAkAAAAOAP//AAARAAkAAAAOAAAAAAARAAkAAAAPAP//AAARAAkAAAAPAAAAAAARAAkAAAAQAP//AAARAAkAAAAQAAAAAAARAAkAAAARAP//AAARAAkAAAARAAAAAAARAAkAAAARAPr/AAARAAkAAAARAPv/AAARAAkAAAAQAPr/AAARAAkAAAAQAPv/AAARAAkAAAAPAPv/AAARAAkAAAAPAPr/AAARAAkAAAAOAPr/AAARAAkAAAAOAPv/AAARAAkAAAANAPv/AAARAAkAAAANAPr/AAARAAkAAAANAPn/AAARAAkAAAANAPj/AAARAAkAAAAOAPj/AAARAAkAAAAMAPj/AAARAAkAAAAMAPn/AAARAAkAAAAMAPr/AAARAAkAAAAMAPv/AAARAAkAAAAPAPj/AAARAAkAAAAQAPj/AAARAAkAAAATAPf/AAARAAkAAAARAPj/AAARAAkAAAASAPj/AAARAAkAAAATAPj/AAARAAkAAAAUAPf/AAARAAkAAAAUAPj/AAARAAkAAAATAPX/AAARAAkAAAATAPT/AAARAAkAAAAUAPT/AAARAAkAAAAUAPX/AAARAAkAAAAUAPb/AAARAAkAAAATAPb/AAARAAkAAAANAPT/AAARAAkAAAAOAPT/AAARAAkAAAAOAPX/AAARAAkAAAAPAPX/AAARAAkAAAAQAPX/AAARAAkAAAARAPT/AAARAAkAAAASAPT/AAARAAkAAAAQAPT/AAARAAkAAAAPAPT/AAARAAkAAAARAPX/AAARAAkAAAASAPX/AAARAAkAAAANAPX/AAARAAkAAAANAPP/AAARAAkAAAANAPL/AAARAAkAAAAOAPL/AAARAAkAAAAPAPL/AAARAAkAAAAQAPL/AAARAAkAAAARAPL/AAARAAkAAAASAPL/AAARAAkAAAASAPH/AAARAAkAAAARAPH/AAARAAkAAAAQAPH/AAARAAkAAAAPAPH/AAARAAkAAAAOAPH/AAARAAkAAAANAPH/AAARAAkAAAARAPD/AAARAAkAAAARAO//AAARAAkAAAASAO//AAARAAkAAAASAO7/AAARAAkAAAARAO7/AAARAAkAAAASAO3/AAARAAkAAAASAPD/AAARAAkAAAARAO3/AAARAAkAAAARAOv/AAARAAkAAAARAOz/AAARAAkAAAASAOz/AAARAAkAAAATAOv/AAARAAkAAAATAOz/AAARAAkAAAASAOv/AAARAAkAAAAUAOv/AAARAAkAAAAUAOz/AAARAAkAAAAVAOv/AAARAAkAAAAVAOz/AAARAAkAAAAWAOz/AAARAAkAAAAWAOv/AAARAAkAAAAXAOz/AAARAAkAAAAXAOv/AAARAAkAAAAYAOv/AAARAAkAAAAYAOz/AAARAAkAAAAZAOv/AAARAAkAAAAZAOz/AAARAAkAAAAaAOv/AAARAAkAAAAaAOz/AAARAAkAAAAbAOv/AAARAAkAAAAbAOz/AAARAAkAAAAcAOv/AAARAAkAAAAcAOz/AAARAAkAAAAdAOz/AAARAAkAAAAdAOv/AAARAAkAAAAeAOv/AAARAAkAAAAeAOz/AAARAAkAAAAfAOv/AAARAAkAAAAfAOz/AAARAAkAAAAgAOv/AAARAAkAAAAgAOz/AAARAAkAAAAhAOv/AAARAAkAAAAhAOz/AAARAAkAAAAiAOv/AAARAAkAAAAiAOz/AAARAAkAAAAjAOz/AAARAAkAAAAjAOv/AAARAAkAAAAkAOz/AAARAAkAAAAkAOv/AAARAAkAAAAlAOz/AAARAAkAAAAlAOv/AAARAAkAAAAmAOv/AAARAAkAAAAmAOz/AAARAAkAAAAnAOv/AAARAAkAAAAoAOv/AAARAAkAAAApAOv/AAARAAkAAAAoAOz/AAARAAkAAAApAOz/AAARAAkAAAAqAOz/AAARAAkAAAArAOz/AAARAAkAAAAsAOz/AAARAAkAAAAqAOv/AAARAAkAAAAnAOz/AAARAAkAAAAtAOz/AAARAAkAAAAtAOv/AAARAAkAAAAsAOv/AAARAAkAAAArAOv/AAARAAkAAAAuAOv/AAARAAkAAAAuAOz/AAARAAkAAAAvAOz/AAARAAkAAAAwAOz/AAARAAkAAAAwAOv/AAARAAkAAAAvAOv/AAARAAkAAAAxAOz/AAARAAkAAAAxAOv/AAARAAkAAAARAPz/AAARAAkAAAARAP3/AAARAAkAAAARAP7/AAARAAkAAAAQAP3/AAARAAkAAAAQAP7/AAARAAkAAAAQAPz/AAARAAkAAAD9////AAARAAkAAAD8////AAARAAkAAAD8/wAAAAARAAkAAAD9/wAAAAARAAkAAAA=")
+tile_set = ExtResource("1_nnsk1")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_4wyf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_71j4m")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(4, 0)
+zoom = Vector2(1.705, 1.705)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_7r4gi")
+animation = &"walk_front"
+autoplay = "walk_front"
+frame_progress = 0.22030006
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k0juu")
+autoplay = true
